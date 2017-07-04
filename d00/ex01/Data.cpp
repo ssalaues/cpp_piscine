@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Book.class.hpp                                     :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssalaues <ssalaues@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/03 15:02:09 by ssalaues          #+#    #+#             */
-/*   Updated: 2017/07/04 12:35:47 by ssalaues         ###   ########.fr       */
+/*   Created: 2017/07/04 12:09:50 by ssalaues          #+#    #+#             */
+/*   Updated: 2017/07/04 12:24:14 by ssalaues         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOOK_CLASS_H
-# define BOOK_CLASS_H
+#include "Book.class.hpp"
 
-class Book
+People::People( void )
 {
-public:
+	this->data[0] = "first";
+	this->data[1] = "last";
+	this->data[2] = "nick";
+	this->data[3] = "login";
+	this->data[4] = "postal";
+	this->data[5] = "email";
+	this->data[6] = "number";
+	this->data[7] = "bday";
+	this->data[8] = "favMeal";
+	this->data[9] = "underColor";
+	this->data[10] = "darkSecret";
+	return ;
+}
 
-	Book( void );
-	People[8];
-	~Book( void );
-
-	std::string ;
-};
-
-class People
+~People::~People( void )
 {
-public:
-
-	People( void );
-	std::string data[11];
-	~People( void );
-	
-};
-#endif
+	return ;
+}
