@@ -17,7 +17,7 @@ class Book
 {
 public:
 
-	const Stuff[7];
+	Stuff[7];
 
 	std::string ;
 };
@@ -27,17 +27,8 @@ class Stuff
 public:
 
 	Stuff( void );
-	std::string first;
-	std::string last;
-	std::string nick;
-	std::string login;
-	std::string postal;
-	std::string email;
-	std::string phone;
-	std::string birthday;
-	std::string meal;
-	std::string under;
-	std::string dark;
+	std::string data[11];
 	~Stuff( void );
 	
 };
+#endif
