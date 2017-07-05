@@ -23,9 +23,14 @@ void Book::fName( int flag )
 {
 	if (flag == 2)
 	{
+		std::cout << std::right << std::setw(10) << std::setprecision(9);
 		if (this->_firstname.length() > 9)
-			std::cout << std::setw(10) << std::setprecision(9) << this->_firstname.append(".");
-		std::cout << std::setw(10);
+		{
+			std::cout << this->_firstname.append(".");
+		}
+		else
+			std::cout << std::setw(10) << this->_firstname;
+		std::cout << "|";
 	}
 	else if (flag == 1)
 		std::cout << this->_firstname;
@@ -39,6 +44,17 @@ void Book::fName( int flag )
 
 void Book::lName( int flag )
 {
+	if (flag == 2)
+	{
+		std::cout << std::right << std::setw(10) << std::setprecision(9);
+		if (this->_firstname.length() > 9)
+		{
+			std::cout << this->_lastname.append(".");
+		}
+		else
+			std::cout << std::setw(10) << this->_lastname;
+		std::cout << "|";
+	}
 	else if (flag == 1)
 		std::cout << this->_lastname;
 	else
@@ -51,6 +67,17 @@ void Book::lName( int flag )
 
 void Book::nName( int flag )
 {
+	if (flag == 2)
+	{
+		std::cout << std::right << std::setw(10) << std::setprecision(9);
+		if (this->_firstname.length() > 9)
+		{
+			std::cout << this->_nickname.append(".");
+		}
+		else
+			std::cout << std::setw(10) << this->_nickname;
+		std::cout << "|\n";
+	}
 	else if (flag == 1)
 		std::cout << this->_nickname;
 	else
@@ -63,6 +90,8 @@ void Book::nName( int flag )
 
 void Book::Login( int flag )
 {
+	if (flag == 2)
+		return ;
 	else if (flag == 1)
 		std::cout << this->_login;
 	else
@@ -75,6 +104,8 @@ void Book::Login( int flag )
 
 void Book::pAddr( int flag )
 {
+	if (flag == 2)
+		return ;
 	else if (flag == 1)
 		std::cout << this->_postal;
 	else
@@ -87,6 +118,8 @@ void Book::pAddr( int flag )
 
 void Book::Email( int flag )
 {
+	if (flag == 2)
+		return ;
 	else if (flag == 1)
 		std::cout << this->_email;
 	else
@@ -100,6 +133,8 @@ void Book::Email( int flag )
 
 void Book::pNumb( int flag )
 {
+	if (flag == 2)
+		return ;
 	else if (flag == 1)
 		std::cout << this->_phone;
 	else
@@ -112,6 +147,8 @@ void Book::pNumb( int flag )
 
 void Book::bDay( int flag )
 {
+	if (flag == 2)
+		return ;
 	else if (flag == 1)
 		std::cout << this->_birthday;
 	else
@@ -124,6 +161,8 @@ void Book::bDay( int flag )
 
 void Book::fMeal( int flag )
 {
+	if (flag == 2)
+		return ;
 	else if (flag == 1)
 		std::cout << this->_favorite;
 	else
@@ -136,6 +175,8 @@ void Book::fMeal( int flag )
 
 void Book::uColor( int flag )
 {
+	if (flag == 2)
+		return ;
 	else if (flag == 1)
 		std::cout << this->_underwear;
 	else
@@ -148,6 +189,8 @@ void Book::uColor( int flag )
 
 void Book::dSecret( int flag )
 {
+	if (flag == 2)
+		return ;
 	else if (flag == 1)
 		std::cout << this->_darkest;
 	else

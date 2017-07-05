@@ -17,7 +17,7 @@ static	Book phone[8];
 
 void	doStuff(int flag, int i)
 {
-	if (!b)
+	if (!flag)
 		id++;
 	if (id < 8)
 	{
@@ -39,9 +39,9 @@ void	search()
 {
 	for (int i = 0; i < id; i++)
 	{
-		std::cout << phone[i]._firstname;
+		std::cout << "|" << i << "|";
+		doStuff(2, i);
 	}
-	doStuff(1, i);
 }
 
 int	main()
