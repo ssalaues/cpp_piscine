@@ -10,51 +10,57 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sample.class.hpp"
+#include "Book.class.hpp"
 
 static int	id = 0;
-static	Book[id]phone[8];
+static	Book phone[8];
 
-void	doStuff(bool b, int i)
+void	doStuff(int flag, int i)
 {
 	if (!b)
 		id++;
 	if (id < 8)
 	{
-		Book[id].fName(b);
-		Book[id].lName(b);
-		Book[id].nName(b);
-		Book[id].Login(b);
-		Book[id].pAddr(b);
-		Book[id].Email(b);
-		Book[id].pNumb(b);
-		Book[id].bDay(b);
-		Book[id].fMeal(b);
-		Book[id].uColor(b);
-		Book[id].dSecret(b);
+		phone[i].fName(flag);
+		phone[i].lName(flag);
+		phone[i].nName(flag);
+		phone[i].Login(flag);
+		phone[i].pAddr(flag);
+		phone[i].Email(flag);
+		phone[i].pNumb(flag);
+		phone[i].bDay(flag);
+		phone[i].fMeal(flag);
+		phone[i].uColor(flag);
+		phone[i].dSecret(flag);
 	}
 }
 
 void	search()
 {
-	int i = 0;
-
-	doStuff(true, i);
+	for (int i = 0; i < id; i++)
+	{
+		std::cout << phone[i]._firstname;
+	}
+	doStuff(1, i);
 }
 
 int	main()
 {
-	char cmd[256];
+	std::string cmd;
+
 	while (1)
 	{
 		std::cout << "Whatcha wanna do?\n";
-		std::cin.getline (cmd, 256);
-		if (cmd.compare("EXIT"))
+		std::getline(std::cin, cmd);
+		std::cout << "WE GON " << cmd << "!\n";
+		if (cmd == "EXIT")
 			exit(0);
-		else if (cmd.compare("ADD") && id < 8)
-			doStuff(false, id++);
-		else if (cmd.compare("SEARCH"))
+		else if (cmd == "ADD" && id < 8)
+			doStuff(0, id);
+		else if (cmd == "SEARCH")
 			search();
+		else
+			std::cout << "Wait... we don't know what \"" << cmd << "\" is..\n";
 	}
 	return 0;
 }

@@ -19,10 +19,16 @@ Book::Book( void )
 	return ;
 }
 
-void fName( bool b )
+void Book::fName( int flag )
 {
-	if (b)
-		cout << this->_firstname;
+	if (flag == 2)
+	{
+		if (this->_firstname.length() > 9)
+			std::cout << std::setw(10) << std::setprecision(9) << this->_firstname.append(".");
+		std::cout << std::setw(10);
+	}
+	else if (flag == 1)
+		std::cout << this->_firstname;
 	else
 	{
 		std::cout << "First Name: \n";
@@ -31,10 +37,10 @@ void fName( bool b )
 	}
 }
 
-void lName( bool b )
+void Book::lName( int flag )
 {
-	if (b)
-		cout << this->_lastname;
+	else if (flag == 1)
+		std::cout << this->_lastname;
 	else
 	{
 		std::cout << "Last Name: \n";
@@ -43,10 +49,10 @@ void lName( bool b )
 	}
 }
 
-void nName( bool b )
+void Book::nName( int flag )
 {
-	if (b)
-		cout << this->_nickname;
+	else if (flag == 1)
+		std::cout << this->_nickname;
 	else
 	{
 		std::cout << "Nick Name: \n";
@@ -55,10 +61,10 @@ void nName( bool b )
 	}
 }
 
-void Login( bool b )
+void Book::Login( int flag )
 {
-	if (b)
-		cout << this->_login;
+	else if (flag == 1)
+		std::cout << this->_login;
 	else
 	{
 		std::cout << "Login: \n";
@@ -67,22 +73,22 @@ void Login( bool b )
 	}
 }
 
-void pAddr( bool b )
+void Book::pAddr( int flag )
 {
-	if (b)
-		cout << this->_postal;
+	else if (flag == 1)
+		std::cout << this->_postal;
 	else
 	{
-		std::cout << "Login: \n";
+		std::cout << "Address: \n";
 		std::cin.getline(str, 256);
 		this->_postal.assign(str);
 	}
 }
 
-void Email( bool b )
+void Book::Email( int flag )
 {
-	if (b)
-		cout << this->_email;
+	else if (flag == 1)
+		std::cout << this->_email;
 	else
 	{
 		std::cout << "Email: \n";
@@ -92,10 +98,10 @@ void Email( bool b )
 }
 
 
-void pNumb( bool b )
+void Book::pNumb( int flag )
 {
-	if (b)
-		cout << this->_phone;
+	else if (flag == 1)
+		std::cout << this->_phone;
 	else
 	{
 		std::cout << "Phone: \n";
@@ -104,10 +110,10 @@ void pNumb( bool b )
 	}
 }
 
-void bDay( bool b )
+void Book::bDay( int flag )
 {
-	if (b)
-		cout << this->_birthday;
+	else if (flag == 1)
+		std::cout << this->_birthday;
 	else
 	{
 		std::cout << "Birthday: \n";
@@ -116,10 +122,10 @@ void bDay( bool b )
 	}
 }
 
-void fMeal( bool b )
+void Book::fMeal( int flag )
 {
-	if (b)
-		cout << this->_favorite;
+	else if (flag == 1)
+		std::cout << this->_favorite;
 	else
 	{
 		std::cout << "Favorite Meal: \n";
@@ -128,10 +134,10 @@ void fMeal( bool b )
 	}
 }
 
-void uColor( bool b )
+void Book::uColor( int flag )
 {
-	if (b)
-		cout << this->_underwear;
+	else if (flag == 1)
+		std::cout << this->_underwear;
 	else
 	{
 		std::cout << "Underwear Color: \n";
@@ -140,10 +146,10 @@ void uColor( bool b )
 	}
 }
 
-void dSecret( bool b )
+void Book::dSecret( int flag )
 {
-	if (b)
-		cout << this->_darkest;
+	else if (flag == 1)
+		std::cout << this->_darkest;
 	else
 	{
 		std::cout << "Darkest Secret: \n";
@@ -151,7 +157,8 @@ void dSecret( bool b )
 		this->_darkest.assign(str);
 	}
 }
-~Book::~Book( void )
+
+Book::~Book( void )
 {
 	std::cout << "Didnt need em anyway" << std::endl;
 	return ;

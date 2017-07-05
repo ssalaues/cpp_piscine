@@ -14,30 +14,32 @@
 # define BOOK_CLASS_H
 
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 class Book
 {
 	public:
 
 		Book( void );
-		std::string		fName( bool b );
-		std::string		lName( bool b );
-		std::string		nName( bool b );
-		std::string		Login( bool b );
-		std::string		pAddr( bool b );
-		std::string		Email( bool b ):
-		std::string		pNumb( bool b );
-		std::string		bDay( bool b );
-		std::string		fMeal( bool b );
-		std::string		uColor( bool b );
-		std::string		dSecret( bool b );
+		void		fName( int flag );
+		void		lName( int flag );
+		void		nName( int flag );
+		void		Login( int flag );
+		void		pAddr( int flag );
+		void		Email( int flag );
+		void		pNumb( int flag );
+		void		bDay( int flag );
+		void		fMeal( int flag );
+		void		uColor( int flag );
+		void		dSecret( int flag );
 		~Book( void );
 
 	private:
 		
-		std::string		_firstName;
-		std::string		_lastName;
-		std::string		_nickName;
+		std::string		_firstname;
+		std::string		_lastname;
+		std::string		_nickname;
 		std::string		_login;
 		std::string		_postal;
 		std::string		_email;
