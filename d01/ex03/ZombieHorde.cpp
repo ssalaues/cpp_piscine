@@ -1,6 +1,13 @@
 #include "ZombieHorde.hpp"
 
-ZombieHorde
+ZombieHorde::ZombieHorde(int n) : _n(n)
+{
+	std::srand(std::time(NULL));
+	ZombieHorde::_zNames();
+	ZombieHorde::_startHorde(n);
+	std::cout << "\nLet the games begin (NEW HORDE)\n";
+	return ;
+}
 
 void	ZombieHorde::_zNames( void )
 {
@@ -16,10 +23,28 @@ void	ZombieHorde::_zNames( void )
 	_ww[9] = "Meseeks";
 }
 
-Zombie	*ZombieHorde::_randomChump( void )
+void	ZombieHorde::_startHorde(int n)
+{
+	_zHorde = new Zombie[n];
+
+	for (int i = 0; i < n; i++)
+		ZombieHorde::_randomChump(&(_ww[i]));
+}
+
+void	ZombieHorde::announceHorde( void )
+{
+	for (int i = 0; i < _n; i++)
+		_zHorde[i].announce();
+}
+
+void	ZombieHorde::_randomChump(Zombie *z)
 {
 	int	chump = rand() % 10;
-	Zombie	*nZ = new Zombie(_ww[chump], this->_zType);
+	z->newZ(_ww[chump], "Horde");
+}
 
-	return (nZ);
+ZombieHorde::~ZombieHorde( void )
+{
+	delete [] _zHorde;
+	std::cout << "\nHorde DEFEATED\n";
 }

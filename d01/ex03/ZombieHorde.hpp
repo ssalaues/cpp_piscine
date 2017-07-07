@@ -3,21 +3,19 @@
 
 #include "Zombie.hpp"
 
-class	ZombieHoarde
+class	ZombieHorde
 {
 		public:
-				ZombieHoarde(int n);
-				void	announceHoarde( void );
-				~ZombieHoarde( void );
-
-				void	announceHoarde();
+				ZombieHorde(int n);
+				void	announceHorde( void );
+				~ZombieHorde( void );
 
 		private:
-				Zombie *_zHoarde;
-				std::string *_ww[10];
+				Zombie *_zHorde;
+				std::string _ww[10];
 				int	_n;
 
-				void	_startHoarde(int n);
+				void	_startHorde(int n);
 				void	_zNames( void );
 				void	_randomChump(Zombie *z);
 };
