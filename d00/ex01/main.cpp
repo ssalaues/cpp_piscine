@@ -37,11 +37,20 @@ void	doStuff(int flag, int i)
 
 void	search()
 {
+	std::string index;
+
 	for (int i = 0; i < id; i++)
 	{
 		std::cout << "|" << i << "|";
 		doStuff(2, i);
 	}
+	std::cout << "Choose your index: \n";
+	std::getline(std::cin, index);
+	if (index == "0" || index == "1" || index == "2" || index == "3" || \
+		index == "4" || index == "5" || index == "6" || index == "7")
+		doStuff(1, atoi(index.c_str()));
+	else
+		std::cout << "Bad index\n"
 }
 
 int	main()
@@ -50,7 +59,7 @@ int	main()
 
 	while (1)
 	{
-		std::cout << "Whatcha wanna do?\n";
+		std::cout << "Whatcha wanna do?\nCommands: ADD SEARCH EXIT\n";
 		std::getline(std::cin, cmd);
 		std::cout << "WE GON " << cmd << "!\n";
 		if (cmd == "EXIT")

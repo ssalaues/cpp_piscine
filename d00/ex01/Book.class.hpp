@@ -10,10 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOOK_CLASS_H
-# define BOOK_CLASS_H
+#ifndef BOOK_CLASS_HPP
+# define BOOK_CLASS_HPP
 
 #include <string>
+#include <cstdlib>
 #include <iostream>
 #include <iomanip>
 

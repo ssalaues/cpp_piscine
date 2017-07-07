@@ -10,21 +10,22 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = phonebook
 
 HEADERS = includes
 
 CXXFLAGS += -I$(HEADERS) -Wall -Werror -Wextra
 
-FILESO =	phonebook.o\
+FILESO =	main.o	\
+		Book.class.o \
 
 all: $(NAME)
 
 $(NAME): $(FILESO)
-	$(CXX) -o $(NAME) $^ $(CXXFLAGS)
+	clang++ -o $(NAME) $^ $(CXXFLAGS)
 
 %.o: %.cpp
-	$(CXX) -o $@ -c $< $(CXXFLAGS)
+	clang++ -o $@ -c $< $(CXXFLAGS)
 
 clean:
 	rm -f $(FILESO)

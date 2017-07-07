@@ -23,17 +23,19 @@ void Book::fName( int flag )
 {
 	if (flag == 2)
 	{
-		std::cout << std::right << std::setw(10) << std::setprecision(9);
-		if (this->_firstname.length() > 9)
+		std::cout << std::setw(10);
+		if (this->_firstname.length() > 10)
 		{
-			std::cout << this->_firstname.append(".");
+			this->_firstname.resize(9);
+			this->_firstname.resize(10, '.');
+			std::cout << this->_firstname;
 		}
 		else
-			std::cout << std::setw(10) << this->_firstname;
+			std::cout << this->_firstname;
 		std::cout << "|";
 	}
 	else if (flag == 1)
-		std::cout << this->_firstname;
+		std::cout << this->_firstname << "\n";
 	else
 	{
 		std::cout << "First Name: \n";
@@ -46,17 +48,19 @@ void Book::lName( int flag )
 {
 	if (flag == 2)
 	{
-		std::cout << std::right << std::setw(10) << std::setprecision(9);
-		if (this->_firstname.length() > 9)
+		std::cout << std::setw(10);
+		if (this->_lastname.length() > 9)
 		{
-			std::cout << this->_lastname.append(".");
+			this->_lastname.resize(9);
+			this->_lastname.resize(10, '.');
+			std::cout << this->_lastname;
 		}
 		else
-			std::cout << std::setw(10) << this->_lastname;
+			std::cout << this->_lastname;
 		std::cout << "|";
 	}
 	else if (flag == 1)
-		std::cout << this->_lastname;
+		std::cout << this->_lastname << "\n";
 	else
 	{
 		std::cout << "Last Name: \n";
@@ -69,17 +73,19 @@ void Book::nName( int flag )
 {
 	if (flag == 2)
 	{
-		std::cout << std::right << std::setw(10) << std::setprecision(9);
-		if (this->_firstname.length() > 9)
+		std::cout << std::setw(10);
+		if (this->_nickname.length() > 9)
 		{
-			std::cout << this->_nickname.append(".");
+			this->_nickname.resize(9);
+			this->_nickname.resize(10, '.');
+			std::cout << this->_nickname;
 		}
 		else
-			std::cout << std::setw(10) << this->_nickname;
+			std::cout << this->_nickname;
 		std::cout << "|\n";
 	}
 	else if (flag == 1)
-		std::cout << this->_nickname;
+		std::cout << this->_nickname << "\n";
 	else
 	{
 		std::cout << "Nick Name: \n";
@@ -93,7 +99,7 @@ void Book::Login( int flag )
 	if (flag == 2)
 		return ;
 	else if (flag == 1)
-		std::cout << this->_login;
+		std::cout << this->_login << "\n";
 	else
 	{
 		std::cout << "Login: \n";
@@ -107,7 +113,7 @@ void Book::pAddr( int flag )
 	if (flag == 2)
 		return ;
 	else if (flag == 1)
-		std::cout << this->_postal;
+		std::cout << this->_postal << "\n";
 	else
 	{
 		std::cout << "Address: \n";
@@ -121,7 +127,7 @@ void Book::Email( int flag )
 	if (flag == 2)
 		return ;
 	else if (flag == 1)
-		std::cout << this->_email;
+		std::cout << this->_email << "\n";
 	else
 	{
 		std::cout << "Email: \n";
@@ -136,7 +142,7 @@ void Book::pNumb( int flag )
 	if (flag == 2)
 		return ;
 	else if (flag == 1)
-		std::cout << this->_phone;
+		std::cout << this->_phone << "\n";
 	else
 	{
 		std::cout << "Phone: \n";
@@ -150,7 +156,7 @@ void Book::bDay( int flag )
 	if (flag == 2)
 		return ;
 	else if (flag == 1)
-		std::cout << this->_birthday;
+		std::cout << this->_birthday << "\n";
 	else
 	{
 		std::cout << "Birthday: \n";
@@ -164,7 +170,7 @@ void Book::fMeal( int flag )
 	if (flag == 2)
 		return ;
 	else if (flag == 1)
-		std::cout << this->_favorite;
+		std::cout << this->_favorite << "\n";
 	else
 	{
 		std::cout << "Favorite Meal: \n";
@@ -178,7 +184,7 @@ void Book::uColor( int flag )
 	if (flag == 2)
 		return ;
 	else if (flag == 1)
-		std::cout << this->_underwear;
+		std::cout << this->_underwear << "\n";
 	else
 	{
 		std::cout << "Underwear Color: \n";
@@ -192,7 +198,7 @@ void Book::dSecret( int flag )
 	if (flag == 2)
 		return ;
 	else if (flag == 1)
-		std::cout << this->_darkest;
+		std::cout << this->_darkest << "\n";
 	else
 	{
 		std::cout << "Darkest Secret: \n";
