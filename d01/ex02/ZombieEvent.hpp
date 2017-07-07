@@ -16,9 +16,9 @@ class ZombieEvent
 			~ZombieEvent( void );
 
 	private:
-			std::string	_ww[7];
+			std::string	_ww[10];
 			std::string	_zType;
 
-			void	zNames( void );
+			void	_zNames( void );
 };
 #endif
