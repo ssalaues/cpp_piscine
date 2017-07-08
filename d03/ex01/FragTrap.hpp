@@ -3,7 +3,7 @@
  *
  * Program: Creates a FR4G-TP assault robot class for game
  *
- * Author: Tony Hendrick
+ * Author: Salim Salaues
  * ==========================================================================*/
 
 #ifndef FRAGTRAP_HPP
@@ -16,6 +16,10 @@
 
 class FragTrap {
 	public:
+		FragTrap(void); //Canonical
+		FragTrap(std::string name); //Canonical
+		FragTrap(FragTrap const & src); //canonical
+
 		int rangedAttack(std::string const & target);
 		int meleeAttack(std::string const & target);
 		int sneakAttack(std::string const & target);
@@ -31,10 +35,6 @@ class FragTrap {
 
 
 		FragTrap & operator=(FragTrap const & rhs); //canonical
-
-		FragTrap(std::string name); //Canonical
-		FragTrap(FragTrap const & src); //canonical
-		FragTrap(void); //Canonical
 		~FragTrap(void); //Canonical
 	private:
 		unsigned int _hitPoints;
@@ -49,6 +49,12 @@ class FragTrap {
 		unsigned int _berserkAttackDamage;
 		unsigned int _armorDamageReduction;
 		std::string _name;
+		std::string	_death[10];
+		std::string	_spawn[10];
+
+		void		_dialogue( void );
+		std::string	_deathNote( void );
+		std::string	_spawnNote( void );
 };
 
 #endif

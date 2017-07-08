@@ -1,5 +1,5 @@
 NAME	=	scavTrap
-SRC		=	FragTrap.class.cpp ScavTrap.class.cpp main.cpp
+SRC		=	FragTrap.cpp ScavTrap.cpp main.cpp
 OBJ		=	$(SRC:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror
 CC		=	g++

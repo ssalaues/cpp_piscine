@@ -3,14 +3,14 @@
  *
  * Program: Creates a SC4V-TP assault robot class for game
  *
- * Author: Tony Hendrick
+ * Author: Salim Salaues
  * ==========================================================================*/
 
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <ctime>
-#include "ScavTrap.class.hpp"
+#include "ScavTrap.hpp"
 
 int ScavTrap::rangedAttack(std::string const & target)
 {
