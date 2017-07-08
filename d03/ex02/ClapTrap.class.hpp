@@ -3,7 +3,7 @@
  *
  * Program: Creates a FR4G-TP assault robot class for game
  *
- * Author: Tony Hendrick
+ * Author: Salim Salaues
  * ==========================================================================*/
 
 class ClapTrap()
