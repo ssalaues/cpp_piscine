@@ -1,5 +1,20 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap( void ) : _pName("FR4G-TP"),
+										_hp(100),
+										_maxHP(100),
+										_maxEnergy(100),
+										_lvl(1);
+										_meleeDmg(30),
+										_rangeDmg(20),
+										_armorRed(5)
+{
+	std::srand(std::time(NULL));
+	std::cout << "In enters " << pName << "...\n";
+	this->_spawnNote();
+	return ;	
+}
+
 FragTrap::FragTrap(std::string pName) : _pName(pName),
 										_hp(100),
 										_maxHP(100),
