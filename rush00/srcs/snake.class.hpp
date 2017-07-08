@@ -15,4 +15,5 @@ class snake
             void    setX(int no);
             int     getY( void );
             void    setY(int no);
+            ~snake( void );
 };
