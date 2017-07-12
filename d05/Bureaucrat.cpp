@@ -7,7 +7,9 @@ Bureaucrat::GradeTooHighException::GradeTooHighException(
   *this = src;
 }
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException(void) { throw(); }
+Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw() {
+  return;
+}
 
 Bureaucrat::GradeTooHighException::operator=(GradeTooHighException const &rhs) {
   (void)rhs;
