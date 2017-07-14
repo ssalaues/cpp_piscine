@@ -6,8 +6,11 @@
 class ShrubberyCreationForm : public Form {
 
 public:
-  ShrubberyCreationForm(int signGrade, int execGrade);
+  ShrubberyCreationForm(void);
+  ShrubberyCreationForm(std::string target);
   ShrubberyCreationForm(ShrubberyCreationForm const &src);
   ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
+  void runForm(Bureaucrat const &exec) const;
   ~ShrubberyCreationForm(void);
 };
+#endif

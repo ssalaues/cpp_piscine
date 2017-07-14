@@ -1,11 +1,14 @@
 #include "Form.hpp"
 
-Form::Form(void) : _name("Form"), _gradeSign(1), _gradeExec(1), _sign(false) {
+Form::Form(void)
+    : _target("Craigslist Rando"), _name("Form"), _gradeSign(1), _gradeExec(1),
+      _sign(false) {
   return;
 }
 
-Form::Form(std::string name, int gradeSign, int gradeExec)
-    : _name(name), _gradeSign(gradeSign), _gradeExec(gradeExec), _sign(false) {
+Form::Form(std::string target, std::string name, int gradeSign, int gradeExec)
+    : _target(target), _name(name), _gradeSign(gradeSign),
+      _gradeExec(gradeExec), _sign(false) {
   if (gradeSign <= 0 || gradeExec <= 0)
     throw Bureaucrat::GradeTooHighException();
   else if (gradeSign > 150 || gradeExec > 150)
@@ -14,7 +17,8 @@ Form::Form(std::string name, int gradeSign, int gradeExec)
 }
 
 Form::Form(Form const &src)
-    : _name(src._name), _gradeSign(src._gradeSign), _gradeExec(src._gradeExec) {
+    : _target("Craigslist Rando"), _name(src._name), _gradeSign(src._gradeSign),
+      _gradeExec(src._gradeExec) {
   *this = src;
   return;
 }
@@ -31,8 +35,6 @@ void Form::beSigned(Bureaucrat &buro) {
     this->_sign = true;
 }
 
-
-
 std::ostream &operator<<(std::ostream &o, Form &rhs) {
   o << "Filled Out By: " << rhs.getName()
     << " Grade Sign: " << rhs.getGradeSign()
@@ -40,6 +42,8 @@ std::ostream &operator<<(std::ostream &o, Form &rhs) {
     << rhs.getSign() << ">\n";
   return o;
 }
+
+std::string Form::getTarget() const { return this->_target; }
 
 std::string Form::getName(void) const { return this->_name; }
 

@@ -8,8 +8,11 @@
 class RobotomyRequestForm : public Form {
 
 public:
-  RobotomyRequestForm(int signGrade, int execGrade);
+  RobotomyRequestForm(void);
+  RobotomyRequestForm(std::string target);
   RobotomyRequestForm(RobotomyRequestForm const &src);
   RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
+  void runForm(Bureaucrat const &exec) const;
   ~RobotomyRequestForm(void);
 };
+#endif

@@ -11,8 +11,9 @@ public:
   Form(Form const &src);
 
   Form &operator=(Form const &rhs);
-  Form(std::string name, int gradeSign, int gradeExec);
+  Form(std::string target, std::string name, int gradeSign, int gradeExec);
   void beSigned(Bureaucrat &buro);
+  std::string getTarget(void) const;
   std::string getName(void) const;
   int getGradeSign(void) const;
   int getGradeExec(void) const;
@@ -43,6 +44,7 @@ public:
   ~Form(void);
 
 private:
+  std::string const _target;
   std::string const _name;
   int const _gradeSign;
   int const _gradeExec;
