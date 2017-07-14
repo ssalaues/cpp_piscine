@@ -5,8 +5,8 @@ PresidentialPardonForm::PresidentialPardonForm(void)
   return;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::target)
-    : Form(target, "Presidential" 25, 5) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target)
+    : Form(target, "Presidential", 25, 5) {
   return;
 }
 
@@ -26,7 +26,7 @@ operator=(PresidentialPardonForm const &rhs) {
 void PresidentialPardonForm::runForm(Bureaucrat const &exec) const {
   Form::executeForm(exec);
   std::cout << this->getTarget()
-            << " has been pardoned by Zafod Beeblebrox himself.\n"
+            << " has been pardoned by Zafod Beeblebrox himself.\n";
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(void) { return; }

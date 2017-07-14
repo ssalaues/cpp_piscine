@@ -18,6 +18,7 @@ public:
   int getGradeSign(void) const;
   int getGradeExec(void) const;
   bool getSign(void) const;
+  virtual void executeForm(Bureaucrat const &exec) const = 0;
 
   class GradeTooHighException : public std::exception {
   public:

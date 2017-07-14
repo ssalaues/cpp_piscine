@@ -5,8 +5,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(void)
   return;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::target)
-    : Form(target, "Shrubbery" 145, 147) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
+    : Form(target, "Shrubbery", 145, 147) {
   return;
 }
 
@@ -23,34 +23,46 @@ operator=(ShrubberyCreationForm const &rhs) {
 }
 
 void ShrubberyCreationForm::runForm(Bureaucrat const &exec) const {
-  Form::executeForm(trees);
+  Form::executeForm(exec);
 
   std::string filename = this->getTarget() += "_shrubbery";
-  std::ofstream prettyTrees(filename);
-  prettyTrees.open(filename);
-  filename << "                                  # #### ####                   "
-              "                    # #### ####\n";
-  filename << "                                ### \/#|### |/####              "
-              "                  ### \/#|### |/####\n";
-  filename << "                               ##\/#/ \||/##/_/##/_#            "
-              "                 ##\/#/ \||/##/_/##/_#\n";
-  filename << "                             ###  \/###|/ \/ # ###              "
-              "               ###  \/###|/ \/ # ###\n";
-  filename << "                           ##_\_#\_\## | #/###_/_####           "
-              "              ##_\_#\_\## | #/###_/_####\n";
-  filename << "                          ## #### # \ #| /  #### ##/##          "
-              "            ## #### # \ #| /  #### ##/##\n";
-  filename << "                           __#_--###`  |{,###---###-~           "
-              "             __#_--###`  |{,###---###-~\n";
-  filename << "                                     \ }{                       "
-              "                       \ }{\n";
-  filename << "                                      }}{                       "
-              "                        }}{\n";
-  filename << "                                      }}{                       "
-              "                        }}{\n";
-  filename << "                                 ejm  {{}                       "
-              "                        {{}\n";
-  filename << "                                , -=-~{ .-^- "
-              "_--____--____--__-__-___-_________________-{  }_=-\n";
+  std::ofstream prettyTrees;
+  prettyTrees.open(filename.c_str());
+  prettyTrees
+      << "                                  # #### ####                   "
+         "                    # #### ####\n";
+  prettyTrees
+      << "                                ### \\/#|### |/####              "
+         "                  ### \\/#|### |/####\n";
+  prettyTrees
+      << "                               ##\\/#/ \\||/##/_/##/_#            "
+         "                 ##\\/#/ \\||/##/_/##/_#\n";
+  prettyTrees
+      << "                             ###  \\/###|/ \\/ # ###              "
+         "               ###  \\/###|/ \\/ # ###\n";
+  prettyTrees
+      << "                           ##_\\_#\\_\\## | #/###_/_####           "
+         "              ##_\\_#\\_\\## | #/###_/_####\n";
+  prettyTrees
+      << "                          ## #### # \\ #| /  #### ##/##          "
+         "            ## #### # \\ #| /  #### ##/##\n";
+  prettyTrees
+      << "                           __#_--###`  |{,###---###-~           "
+         "             __#_--###`  |{,###---###-~\n";
+  prettyTrees
+      << "                                     \\ }{                       "
+         "                       \\ }{\n";
+  prettyTrees
+      << "                                      }}{                       "
+         "                        }}{\n";
+  prettyTrees
+      << "                                      }}{                       "
+         "                        }}{\n";
+  prettyTrees
+      << "                                 ejm  {{}                       "
+         "                        {{}\n";
+  prettyTrees << "                                , -=-~{ .-^- "
+                 "_--____--____--__-__-___-_________________-{  }_=-\n";
+  prettyTrees.close();
 }
 ShrubberyCreationForm::~ShrubberyCreationForm(void) { return; }

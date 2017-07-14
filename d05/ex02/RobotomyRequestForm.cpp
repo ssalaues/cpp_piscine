@@ -6,8 +6,8 @@ RobotomyRequestForm::RobotomyRequestForm(void)
   return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::target)
-    : Form(target, "Robotomy" 72, 147) {
+RobotomyRequestForm::RobotomyRequestForm(std::string target)
+    : Form(target, "Robotomy", 72, 45) {
   srand(time(NULL));
   return;
 }
