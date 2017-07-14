@@ -36,10 +36,9 @@ void Form::beSigned(Bureaucrat &buro) {
 }
 
 std::ostream &operator<<(std::ostream &o, Form &rhs) {
-  o << "Filled Out By: " << rhs.getName()
-    << " Grade Sign: " << rhs.getGradeSign()
-    << " Grade Exectution: " << rhs.getGradeExec() << " Is Signed? "
-    << rhs.getSign() << ">\n";
+  o << "Filled Out: " << rhs.getName() << "\nGrade Sign: " << rhs.getGradeSign()
+    << "\nGrade Exectution: " << rhs.getGradeExec() << "\nIs Signed? "
+    << rhs.getSign() << "\n";
   return o;
 }
 
@@ -52,6 +51,13 @@ int Form::getGradeSign(void) const { return this->_gradeSign; }
 int Form::getGradeExec(void) const { return this->_gradeExec; }
 
 bool Form::getSign(void) const { return this->_sign; }
+
+void Form::execute(Bureaucrat const &executor) const {
+  if (!(this->getSign()))
+    throw Form::NotSigned();
+  else if (executor.getGrade() > this->getGradeExec())
+    throw Form::GradeTooLowException();
+}
 
 Form::GradeTooHighException::GradeTooHighException(void) { return; }
 
@@ -88,9 +94,25 @@ operator=(GradeTooLowException const &rhs) {
 }
 
 const char *Form::GradeTooLowException::what() const throw() {
-  return "Back down in the depths, I see...\n";
+  return "he's back down in the depths, I see...\n";
 }
 
 Form::GradeTooLowException::~GradeTooLowException(void) throw() { return; }
+
+Form::NotSigned::NotSigned(void) { return; }
+
+Form::NotSigned::NotSigned(NotSigned const &src) {
+  *this = src;
+  return;
+}
+
+Form::NotSigned &Form::NotSigned::operator=(NotSigned const &rhs) {
+  (void)rhs;
+  return *this;
+}
+
+const char *Form::NotSigned::what() const throw() { return "Nope, not signed"; }
+
+Form::NotSigned::~NotSigned(void) throw() { return; }
 
 Form::~Form(void) { return; }

@@ -25,8 +25,8 @@ operator=(RobotomyRequestForm const &rhs) {
   return *this;
 }
 
-void RobotomyRequestForm::runForm(Bureaucrat const &exec) const {
-  Form::executeForm(exec);
+void RobotomyRequestForm::execute(Bureaucrat const &exec) const {
+  Form::execute(exec);
   if (rand() % 2 == 1)
     std::cout << "\a boop \a beep \a boop\n"
               << this->getTarget() << " has been robotomized successfully\n";

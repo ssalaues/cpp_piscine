@@ -73,41 +73,51 @@ void Bureaucrat::signForm(Form &form) {
               << " ...no trust\n";
   }
 }
-  // Soooo high bro
-  Bureaucrat::GradeTooHighException::GradeTooHighException(void) { return; }
 
-  Bureaucrat::GradeTooHighException::GradeTooHighException(
-      GradeTooHighException const &src) {
-    *this = src;
+void Bureaucrat::executeForm(Form const &form) {
+  try {
+    form.execute(*this);
+    std::cout << this->_name << " runs form " << form.getName() << "\n";
+  } catch (std::exception &e) {
+    std::cout << this->_name << " can't run " << form.getName() << " because "
+              << e.what() << "\n";
   }
+}
+// Soooo high bro
+Bureaucrat::GradeTooHighException::GradeTooHighException(void) { return; }
 
-  Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw() {
-    return;
-  }
+Bureaucrat::GradeTooHighException::GradeTooHighException(
+    GradeTooHighException const &src) {
+  *this = src;
+}
 
-  Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::
-  operator=(GradeTooHighException const &rhs) {
-    (void)rhs;
-    return *this;
-  }
+Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw() {
+  return;
+}
 
-  const char *Bureaucrat::GradeTooHighException::what() const throw() {
-    return "flew too close to the sun\n";
-  }
+Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::
+operator=(GradeTooHighException const &rhs) {
+  (void)rhs;
+  return *this;
+}
 
-  // Tooooo low man
-  Bureaucrat::GradeTooLowException::GradeTooLowException(void) { return; }
+const char *Bureaucrat::GradeTooHighException::what() const throw() {
+  return "flew too close to the sun\n";
+}
 
-  Bureaucrat::GradeTooLowException::GradeTooLowException(
-      GradeTooLowException const &src) {
-    *this = src;
-  }
+// Tooooo low man
+Bureaucrat::GradeTooLowException::GradeTooLowException(void) { return; }
 
-  Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::operator=(
-      GradeTooLowException const &rhs) {
-    (void)rhs;
-    return *this;
-  }
-  Bureaucrat::GradeTooLowException::~GradeTooLowException(void) throw() {
-    return;
-  }
+Bureaucrat::GradeTooLowException::GradeTooLowException(
+    GradeTooLowException const &src) {
+  *this = src;
+}
+
+Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::
+operator=(GradeTooLowException const &rhs) {
+  (void)rhs;
+  return *this;
+}
+Bureaucrat::GradeTooLowException::~GradeTooLowException(void) throw() {
+  return;
+}

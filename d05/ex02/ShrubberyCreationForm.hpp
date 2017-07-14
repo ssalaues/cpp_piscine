@@ -14,7 +14,7 @@ public:
   ShrubberyCreationForm(std::string target);
   ShrubberyCreationForm(ShrubberyCreationForm const &src);
   ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
-  void runForm(Bureaucrat const &exec) const;
+  void execute(Bureaucrat const &exec) const;
   ~ShrubberyCreationForm(void);
 };
 #endif

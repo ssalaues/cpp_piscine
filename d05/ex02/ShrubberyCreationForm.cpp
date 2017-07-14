@@ -22,8 +22,8 @@ operator=(ShrubberyCreationForm const &rhs) {
   return *this;
 }
 
-void ShrubberyCreationForm::runForm(Bureaucrat const &exec) const {
-  Form::executeForm(exec);
+void ShrubberyCreationForm::execute(Bureaucrat const &exec) const {
+  Form::execute(exec);
 
   std::string filename = this->getTarget() += "_shrubbery";
   std::ofstream prettyTrees;

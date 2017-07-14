@@ -12,13 +12,13 @@ public:
 
   Form &operator=(Form const &rhs);
   Form(std::string target, std::string name, int gradeSign, int gradeExec);
+  virtual void execute(Bureaucrat const &executor) const = 0;
   void beSigned(Bureaucrat &buro);
   std::string getTarget(void) const;
   std::string getName(void) const;
   int getGradeSign(void) const;
   int getGradeExec(void) const;
   bool getSign(void) const;
-  virtual void executeForm(Bureaucrat const &exec) const = 0;
 
   class GradeTooHighException : public std::exception {
   public:
@@ -41,8 +41,16 @@ public:
 
     virtual ~GradeTooLowException(void) throw();
   };
+  class NotSigned : public std::exception {
+  public:
+    NotSigned(void);
+    NotSigned(NotSigned const &src);
+    NotSigned &operator=(NotSigned const &rhs);
+    virtual const char *what() const throw();
+    virtual ~NotSigned(void) throw();
+  };
 
-  ~Form(void);
+  virtual ~Form(void) = 0;
 
 private:
   std::string const _target;

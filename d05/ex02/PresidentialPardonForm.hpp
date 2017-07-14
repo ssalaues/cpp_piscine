@@ -10,7 +10,7 @@ public:
   PresidentialPardonForm(std::string target);
   PresidentialPardonForm(PresidentialPardonForm const &src);
   PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
-  void runForm(Bureaucrat const &exec) const;
+  void execute(Bureaucrat const &exec) const;
   ~PresidentialPardonForm(void);
 };
 #endif

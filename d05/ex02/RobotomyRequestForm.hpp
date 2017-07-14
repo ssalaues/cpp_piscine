@@ -13,7 +13,7 @@ public:
   RobotomyRequestForm(std::string target);
   RobotomyRequestForm(RobotomyRequestForm const &src);
   RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
-  void runForm(Bureaucrat const &exec) const;
+  void execute(Bureaucrat const &exec) const;
   ~RobotomyRequestForm(void);
 };
 #endif
