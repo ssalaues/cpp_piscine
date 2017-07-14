@@ -59,8 +59,7 @@ void Bureaucrat::setName(std::string const name) {
 }
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat &rhs) {
-  o << "<" << rhs.getName() << ">"
-    << ", Bureaucrat Grade <" << rhs.getGrade() << ">\n";
+  o << rhs.getName() << ", Bureaucrat Grade " << rhs.getGrade() << "\n";
   return o;
 }
 
