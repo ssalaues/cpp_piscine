@@ -1,5 +1,5 @@
 NAME	=	array
-SRC		=	Array.tpp main.cpp
+SRC		=	Array.cpp main.cpp
 OBJ		=	Array.o main.o
 FLAGS	=	-Wall -Wextra -Werror
 CC		=	clang++
