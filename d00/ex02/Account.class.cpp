@@ -68,10 +68,6 @@ void	Account::_displayTimestamp( void ) {
 
 void	Account::makeDeposit( int deposit ) {
 
-
-//	[20150406_153629] index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
-
-	// std::cout << "index:" << Account::_nbAccounts << ";total:" << Account::_totalAmount << ";deposits:" << Account::_totalNbDeposits << ";withdrawals:" << Account::_totalNbWithdrawals << std::endl;
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount << ";deposit:" << deposit << ";amount:" << ( this->_amount + deposit) << ";nb_deposits:" << (this->_nbDeposits + 1) << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: ssalaues <ssalaues@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 12:25:15 by ssalaues          #+#    #+#             */
-/*   Updated: 2017/07/04 12:45:02 by ssalaues         ###   ########.fr       */
+/*   Updated: 2017/07/19 18:26:02 by ssalaues         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	search()
 		index == "4" || index == "5" || index == "6" || index == "7")
 		doStuff(1, atoi(index.c_str()));
 	else
-		std::cout << "Bad index\n"
+		std::cout << "Bad index\n";
 }
 
 int	main()
