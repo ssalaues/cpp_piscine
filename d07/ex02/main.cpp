@@ -1,4 +1,4 @@
-#include "Array.cpp"
+#include "Array.tpp"
 
 int main(void) {
   try {

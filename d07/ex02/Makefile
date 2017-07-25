@@ -1,6 +1,6 @@
 NAME	=	array
-SRC		=	Array.cpp main.cpp
-OBJ		=	Array.o main.o
+SRC		=	main.cpp
+OBJ		=	main.o
 FLAGS	=	-Wall -Wextra -Werror
 CC		=	clang++
 
