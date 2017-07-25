@@ -15,6 +15,7 @@ int main(void) {
   ob.setSigner(bob);
   ob.setExecutor(hermes);
   try {
+  	ob.doBureaucracy("RobotomyRequest", "Pigley");
     ob.doBureaucracy("mutant pig termination", "Pigley");
   } catch (Form::NotSigned &e) {
     std::cout << e.what() << "\n";

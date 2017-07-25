@@ -49,15 +49,12 @@ Form *Intern::searchForm(std::string nameForm, std::string targetForm) {
       return (this->*arrPtrF[i])(targetForm);
     }
   }
+  std::cout << "Intern busted their ass off on " << nameForm << " but was useless\n";
   throw Intern::NoForm();
 }
 
 Form *Intern::makeForm(std::string nameForm, std::string targetForm) {
-  try {
     return Intern::searchForm(nameForm, targetForm);
-  } catch (std::exception &e) {
-    std::cout << e.what() << "\n";
-  }
   return NULL;
 }
 
